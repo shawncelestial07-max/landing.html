@@ -36,23 +36,24 @@
 </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Task Tracker</h1>
-    <button id="adminBtn">Admin</button>
-    <button id="memberBtn">Member</button>
-  </div>
+
+<div class="container">
+  <h1>Welcome to Task Tracker</h1>
+  <button id="adminBtn">Admin</button>
+  <button id="memberBtn">Member</button>
+</div>
 
 <script>
   document.getElementById("adminBtn").onclick = () => {
-    // Admin goes to homepage normally (login required)
-    window.location.href = "homepage.html"; // replace with your actual homepage file
+    localStorage.setItem("memberMode", "false");
+    window.location.href = "homepage.html";
   };
 
   document.getElementById("memberBtn").onclick = () => {
-    // Member goes to homepage in read-only mode
     localStorage.setItem("memberMode", "true");
     window.location.href = "homepage.html";
   };
 </script>
+
 </body>
 </html>
